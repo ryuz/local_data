@@ -1,0 +1,10 @@
+*           text=auto
+*.txt       text
+*.md        text
+*.html      text
+*.bat       text eol=crlf
+*.vcproj    text eol=crlf
+*.sh        text eol=lf
+*.reg       -text
+*.jpg       -text
+*.png       -text
