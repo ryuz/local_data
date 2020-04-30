@@ -1,3 +1,5 @@
+# Ultra96V2‚ÌPL‚ÅLEDƒ`ƒJ‚ğs‚¤(Vivado‚Å‚Ìbitstreamì¬•Ò)
+
 # ‚Í‚¶‚ß‚É
 [Ultra96V2](https://www.avnet.com/wps/portal/japan/products/product-highlights/ultra96/) ‚Å PL ‚©‚ç LED ‚ğŒõ‚ç‚¹‚é‚¢‚í‚ä‚éLƒ`ƒJ‚ğs‚Á‚Ä‚¨‚è‚Ü‚·B
 ‚½‚Ç‚è’…‚­‚Ü‚Å‚É‚¢‚­‚Â‚©‚â‚è–‚ª‚ ‚é‚Ì‚Å‚·‚ªA–{‹L–‚Í‚Ü‚¸Vivado‚ÅPL—p‚Ìbitstream‚ğì‚é‚Æ‚±‚ë‚Ü‚Å‚ğ‘‚«‚Ü‚µ‚½B
@@ -39,57 +41,76 @@ C:\Xilinx\Vivado\2019.2\data\boards\board_files
 
 # Vivado ƒvƒƒWƒFƒNƒg‚Ìì¬
 Vivado‚ğ‹N“®‚·‚é‚ÆˆÈ‰º‚Ì‚æ‚¤‚È‰æ–Ê‚ªo‚é‚©‚Æv‚¢‚Ü‚·B
-![vivado_create_project.png](https://s3.qrunch.io/a96e3fdc4848953d57e3f2f3aae78046.png)
+
+![vivado_create_project.png](vivado_create_project.png)
+
 Create Project ‚ğ‘I‚ñ‚ÅƒvƒƒWƒFƒNƒg‚ğì‚è‚Ü‚µ‚å‚¤B
 
-![vivado_create_project1.png](https://s3.qrunch.io/755536e39754d5fe6f22e7cee6a76cc9.png)
+![vivado_create_project1.png](vivado_create_project1.png)
+
 NEXT‚ğ‘I‚Ñ‚Ü‚·
 
-![vivado_create_project2.png](https://s3.qrunch.io/3d2478af379d391ba761e5f39e65f073.png)
+![vivado_create_project2.png](vivado_create_project2.png)
+
 ‚±‚±‚Å‚Í ultra96v2_led ‚Æ‚¢‚¤ƒvƒƒWƒFƒNƒg–¼‚É‚µ‚Ä‚¢‚Ü‚·B
 ƒpƒX‚ÍŠe©‚ÌD‚«‚ÈêŠ‚Éİ’è‚µ‚Ä‚­‚¾‚³‚¢B
 ‚½‚¾‚µWindows‚Å‚ÍƒpƒX–¼‚É260•¶š‚Ì§ŒÀ‚ª‚ ‚èAVivado‚ª“à•”‚Å”ñí‚É[‚¢ƒpƒX‚ğì‚é‚±‚Æ‚ª‚ ‚é‚Ì‚ÅA‚È‚é‚×‚­’Z‚¢ƒpƒX–¼‚ÌêŠ‚É’u‚­‚±‚Æ‚ğ‚¨Š©‚ß‚µ‚Ü‚·B
 
 ˆø‚«‘±‚«ANEXT‚ğ‰Ÿ‚µ‚Ä‚¢‚­‚Æ
+
 ![vivado_create_project3.png](https://s3.qrunch.io/82823d02d9e554f9ae6dd428b35cf583.png)
+
 ![vivado_create_project4.png](https://s3.qrunch.io/e9b5beb4f9fce4c2fc0bb2348ea354f0.png)
+
 ![vivado_create_project5.png](https://s3.qrunch.io/ed596fa11d5edbca3c42cb9416f3a09e.png)
 
 ƒfƒoƒCƒX‘I‘ğ‚Ìƒ_ƒCƒAƒƒO‚ªo‚Ü‚·‚Ì‚ÅABoards‚Ìƒ^ƒu‚ğ‘I‚Ñ‚Ü‚·B
+
 ![vivado_create_project6.png](https://s3.qrunch.io/c1af35e80419266ab77eed0299c80997.png)
 
 ƒ{[ƒhƒtƒ@ƒCƒ‹‚ÌƒCƒ“ƒXƒg[ƒ‹‚ª‚¤‚Ü‚­‚¢‚Á‚Ä‚¢‚ê‚Îƒ{[ƒhˆê——‚Ì’†‚É Ultra96v2 ‚ªŒ»‚ê‚Ü‚·‚Ì‚Å‘I‘ğ‚µ‚Ü‚·B
 •\¦‚ÉŠÔ‚Ì‚©‚©‚éƒP[ƒX‚à‚ ‚é‚Ì‚Å‚»‚¤‚¢‚¤ê‡‚Í­‚µ‘Ò‚¿‚Ü‚µ‚å‚¤BSearch—“‚Éultra96‚Æ‘Å‚¿‚Ş‚ÆŒŸõ‚Å‚«‚Ü‚·B
+
 ![vivado_create_project7.jpg](https://s3.qrunch.io/e538a33fbe1628dbfec16bcf66513d77.png)
+
 ‘I‘ğ‚µ‚½‚ç NEXT ‚ğ‰Ÿ‚µ‚Ü‚·B
 
 ÅŒã‚Ìƒ_ƒCƒAƒƒO‚Å Finish ‚ğ‰Ÿ‚¹‚ÎƒvƒƒWƒFƒNƒg‚ªo—ˆã‚ª‚è‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/c3a7d6aa179afa2fff332e33f870dea9.png)
 
 # Block Design
 ƒvƒƒWƒFƒNƒg‚ªŠ®¬‚µ‚½‚çA‘‘¬RTL‚ğ‘‚«‚½‚¢‚Æ‚±‚ë‚Å‚·‚ªA‚Í‚â‚é‹C‚¿‚ğ—}‚¦‚ÄA‚Ü‚¸Å‰‚É Block Design ‚Å PS•”•ª‚Ì’è‹`‚ğ‚µ‚Ä‚µ‚Ü‚¢‚½‚¢‚Æv‚¢‚Ü‚·B
 
 ¶‘¤‚É‚ ‚é Create Block Design ‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢B
+
 ![vivado_design2.png](https://s3.qrunch.io/1d62e27e5691ed81bd0cbefa17035497.png)
 
 design_1 ‚Æ‚¢‚¤–¼‘O‚ÌƒfƒUƒCƒ“‚ğì‚ë‚¤‚Æ‚µ‚Ü‚·‚ªA¡‰ñ‚Í‚»‚Ì‚Ü‚Ü OK ‚Æ‚µ‚Ü‚µ‚½B
+
 ![vivado_design3.png](https://s3.qrunch.io/3fe0ef9deec4769aa293ec0e918f4dc9.png)
 
 block design ‚Ì‰æ–Ê‚É‚È‚é‚Ì‚Å
+
 ![vivado_design4.png](https://s3.qrunch.io/cd32885fba2599b09371d2fa4f2b171b.png)
 
 Add IP ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢
+
 ![vivado_design5.png](https://s3.qrunch.io/ee05fe8da95d483d266ed1972531edae.png)
 
 IP‚ğ‘I‘ğ‚·‚é‰æ–Ê‚ªo‚Ä‚­‚é‚Ì‚Å Search ‚É zynq ‚Æ‘Å‚¿‚ñ‚ÅAo‚Ä‚«‚½ uZynq UltraScale+ MPSoCv‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢B
+
 ![vivado_design6.png](https://s3.qrunch.io/280258d6d6322d7da4aad4918f7cab29.png)
 
 ‰æ–Ê‚ÉZYNQ UltraSCALE+ ‚Æ•`‚©‚ê‚½IP‚ªŒ»‚ê‚Ü‚·B‚±‚ÌIP‚ÍPS•”•ª‚ğŠÛXŠÜ‚ñ‚¾Zynq“Á—L‚ÌIP‚ÅƒvƒƒWƒFƒNƒg‚Ì’†‚Å‚PŒÂ‚¾‚¯¶¬‚µ‚Äg‚¢‚Ü‚·(LSI‚Ì’†‚É•¨—“I‚É1ŒÂ‚µ‚©‚È‚¢‚Ì‚Å)B
 ‘±‚¯‚ÄuRun Block Automationv‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢B
+
 ![undefined.jpg](https://s3.qrunch.io/1f525df53885141351c30b08e798cdba.png)
 
 Run Block Automationƒ_ƒCƒAƒƒO‚ªo‚Ü‚·‚Ì‚ÅuApply Board Presetv‚Éƒ`ƒFƒbƒN‚ª•t‚¢‚Ä‚¢‚é‚±‚Æ‚ğŠm”F‚µ‚ÄOK‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢B
+
 ![undefined.jpg](https://s3.qrunch.io/d0f53c5a6b56b8621098d91cabd232ec.png)
+
 ‚±‚ê‚ÅAUltra96V2‚Ìƒ{[ƒh‚É‚ ‚Á‚½İ’è‚ªƒ{[ƒhƒtƒ@ƒCƒ‹‚ğŒ³‚ÉIP‚Éİ’è‚³‚ê‚Ü‚·B
 ‚È‚¨A’ˆÓ“_‚Æ‚µ‚ÄA‚±‚±‚Ås‚¤İ’è‚ÍuPS•”‚Ìƒ\ƒtƒgƒEƒFƒA‚ª‚±‚Ì‚æ‚¤‚Éİ’è‚µ‚Ä‚­‚ê‚é‘O’ñ‚ÅPL‚Í‚±‚ÌIP(PS•”)‚ğg‚¢‚Ü‚·‚æv‚ÆéŒ¾‚µ‚Ä‚¢‚é‚¾‚¯‚ÅAÀÛ‚É‚Í‚±‚ê‚Æˆê’v‚·‚éİ’è‚ğ•Ê“rPS‚Ìƒ\ƒtƒgƒEƒFƒA‚Ås‚¤•K—v‚ª‚ ‚è‚Ü‚·(•s®‡‚É‚È‚ç‚È‚¢‚æ‚¤‚ÉŠÇ—‚·‚é‚Ì‚Íƒ†[ƒU[‘¤‚ÌÓ”C‚Æ‚È‚è‚Ü‚·)B
 PS‚Ìİ’è‚ÍAFSBL(First Step Boot Loader)‚Ås‚Á‚½‚èALinux‹N“®Œã‚ÉDeviceTree overlay ‚È‚Ç‚Ì‹@\‚Ås‚Á‚½‚èAJTAGƒfƒoƒbƒO‚ÉJTAG‚©‚çs‚Á‚½‚èA•û–@‚Í—lX‚Å‚·‚ª‚È‚ñ‚ç‚©‚Ì•û–@‚Ås‚¤•K—v‚ª‚ ‚è‚Ü‚·(‚±‚ê‚ç‚Ìà–¾‚Í‚Ü‚½‹@‰ï‚ª‚ ‚ê‚Î•Ê‚Ì‹L–‚É‚Ä‹LÚ‚µ‚Ü‚·)B
@@ -99,49 +120,74 @@ PS‚Ìİ’è‚ÍAFSBL(First Step Boot Loader)‚Ås‚Á‚½‚èALinux‹N“®Œã‚ÉDeviceTree over
 ‚³‚ÄA¡‰ñ‚ÍA**PS‘¤‚Ìƒ\ƒtƒgƒEƒFƒAİ’è‚ªƒ{[ƒhƒtƒ@ƒCƒ‹‚ÌƒfƒtƒHƒ‹ƒg’l‚Å‚È‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ğ‘O’ñ‚É**˜b‚ği‚ß‚Ü‚·B
 ‚±‚±‚Åˆê“x PS‚Ìİ’è‚ğ”`‚¢‚Ä‚¨‚«‚Ü‚µ‚å‚¤BZYNQ UltraSCALE+ ‚Æ•`‚©‚ê‚½IP‚ğƒ_ƒuƒ‹ƒNƒŠƒbƒN‚µ‚Ä‚İ‚Ä‚­‚¾‚³‚¢B
 Ÿ‚Ì‚æ‚¤‚Èƒ_ƒCƒAƒƒO‚ªŠJ‚¢‚½‚Æv‚¢‚Ü‚·B
+
 ![vivado_design9](https://s3.qrunch.io/2d7f530e6c237e864065a4daaa4e88d8.png)
+
 ‚±‚Ì–c‘å‚È‹@”\‚ğ‚Á‚½IP‚ÍPS•”‘S‘Ì‚ğŠÜ‚ñ‚¾‚à‚Ì‚Å‚·B‚±‚Ì•”•ª‚Ì‚İ‚ÅLinux‚ğ‹N“®‚³‚¹‚Äˆê”Ê“I‚ÈICT‹@”\‚ğ‚Á‚½ƒ\ƒtƒgƒEƒFƒA‚ğ\’z‚·‚é‚±‚Æ‚à‰Â”\‚Å‚·B‚±‚ÌPS‚Ì‘¶İ‚Ì‚¨‚©‚°‚Å–‘O€”õ‚ª‘å•Ï‚È”½–ÊA‚±‚ê‚©‚çƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚Ä‚¢‚­PL•”•ª‚ğ**ƒCƒ“ƒ^[ƒlƒbƒg‚ÉŒq‚¢‚ÅIoTŠí‹@‚Æ‚µ‚Ä‚Ì‹@”\‚ğ‚½‚¹‚é‚±‚Æ‚ªŠÈ’P‚É‚È‚é** ‚Æ‚¢‚¤‘å–‚È•”•ª‚Å‚à‚ ‚è‚Ü‚·B
 
 ‚³‚Ä‚±‚±‚ÅA¡‰ñ‚Ì‹L–‚Åd—v‚È•”•ª‚Æ‚È‚éPL‚Ö‚ÌƒNƒƒbƒN‹Ÿ‹‹İ’è‚Å‚ ‚éuPL Fabric Clocksv‚Ì€‚ğŒ©‚Ä‚¨‚«‚Ü‚µ‚å‚¤BPL0 ‚É 100MHz ‚ªİ’è‚³‚ê‚Ä‚¢‚é‚©‚Æv‚¢‚Ü‚·BPL•”‚ÅVerilog‚È‚Ç‚ÅRTLƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğ‚·‚éê‡‚É‚ÍƒNƒƒbƒN“ü—Í‚ª‚Ù‚Ú•K{‚Å‚·‚ªAUltra96‚Å‚ÍPL•”‚ÌŠO•”’[q‚ÉŒq‚ª‚Á‚½ƒNƒƒbƒN‚Í‚ ‚è‚Ü‚¹‚ñ‚Ì‚ÅAPS•”‚©‚çƒNƒƒbƒN‚ğ‚à‚ç‚¤‚±‚Æ‚ª•K{‚Å‚·B‚µ‚½‚ª‚Á‚Ä‚±‚Ì•”•ª‚ÌƒNƒƒbƒN‚ÌŠm”F‚Í”ñí‚Éd—v‚Å‚·B
+
 ![vivado_design10.png](https://s3.qrunch.io/6e3b256748c85c976a0916976f54c260.png)
+
 ‚³‚ÄA¡‰ñ‚ÍŠm”F‚¾‚¯‚µ‚½‚çƒ_ƒCƒAƒƒO‚Í•Â‚¶‚Ü‚µ‚å‚¤
 
 ‘±‚¯‚ÄƒuƒƒbƒNƒfƒUƒCƒ“’†‚Ì Zynq IP ‚É‚ ‚é pl_clk0 ‚Ì‚Æ‚±‚ë‚ğ‰EƒNƒŠƒbƒN‚µ‚ÄAuMake Extarnalv‚ğ‘I‚Ñ‚Ü‚µ‚å‚¤B
+
 ![vivado_design11.png](https://s3.qrunch.io/0b225e22066f3140a97b94e77bc7a6ed.png)
 
 pl_clk0_0 ‚Æ‚¢‚¤’[q‚ªŒ»‚ê‚½‚©‚Æv‚¢‚Ü‚·B‚±‚ê‚ªæ‚Ù‚ÇŠm”F‚µ‚½ PL Fabric Clocks ‚Ì 100MHz ‚Ìo—Í‚Æ‚È‚è‚Ü‚·B
+
 ![vivado_design12.png](https://s3.qrunch.io/cd22acd13a6bc7517e839440f5693a48.png)
 
 ‚Ü‚½A¡‰ñ‚Íg—p‚µ‚È‚¢‚Ì‚Å‚·‚ª maxihpm0_fpd_aclk, maxihpm1_fpd_aclk ‚Æ‚¢‚¤AXIƒoƒX‚ÌƒNƒƒbƒN“ü—Í‚É‰½‚àƒNƒƒbƒN‚ğŒq‚ª‚¸‚É‚¨‚­‚ÆƒGƒ‰[‚É‚È‚Á‚Ä‚µ‚Ü‚¤‚Ì‚ÅA•Ö‹Xã‚±‚±‚É‚à100MHz‚ğ“ü—Í‚µ‚Ä‚µ‚Ü‚¢‚Ü‚µ‚å‚¤Bƒ}ƒEƒX‚Åƒhƒ‰ƒbƒO‚·‚é‚ÆŒ‹ü‚ª‚Å‚¢‚Ü‚·B
+
 ![vivado_design13.png](https://s3.qrunch.io/476230459eafebe5e98a82284abdc42b.png)
 
+
 ‚±‚±‚ÅAF6 ƒL[‚ğ‰Ÿ‚·‚Æ Validation ‚ª“®‚«A
+
 ![vivado_design14.png](https://s3.qrunch.io/e79b0aced95b44a437d3d14e6b22eade.png)
+
 ‚Ì‚æ‚¤‚É successfull ‚Ìƒ_ƒCƒAƒƒO‚ª•\¦‚³‚ê‚ê‚Î Block Design ‚Ås‚¤ì‹Æ‚ÍŠ®—¹‚Å‚·B
 
 # RTL(verilog)ƒvƒƒOƒ‰ƒ~ƒ“ƒO
 ¶‘¤‚É‚ ‚éuPROJECT MANAGERv‚ğƒNƒŠƒbƒN‚µ‚ÄPROJECT MANAGER‚É–ß‚è‚Ü‚·B
+
 ![vivado_rtl1.png](https://s3.qrunch.io/fbfe7eac7ced7d3fea82198d6676aa43.png)
+
 ‚¢‚ë‚¢‚æ‚±‚±‚©‚ç RTL ‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚Ä‚¢‚«‚Ü‚·B
 
 uDesign Sourcesv‚ğ‰EƒNƒŠƒbƒN‚µ‚ÄuAdd Sourcesv‚ğ‘I‚Ñ‚Ü‚·B
+
 ![vivado_rtl2.png](https://s3.qrunch.io/2bef6d68a329ce75de1a31d4e31c12b4.png)
 
+
 uAdd or create design sourcesv‚ğ‘I‚ñ‚Å NEXT ‚ğ‰Ÿ‚µ‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/0288936114677d79990f9f59d106e231.png)
 
+
 uCreate Filev‚ğ‰Ÿ‚µ‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/5405f4a1861005ae07d70d8273d9523e.png)
 
+
 ì¬‚·‚éƒtƒ@ƒCƒ‹–¼‚ğ•·‚¢‚Ä‚­‚é‚Ì‚Å¡‰ñ‚Í ultra96v2_led.v ‚Æ‚µ‚ÄOK‚ğ‰Ÿ‚µ‚Ü‚·B
+
 ![vivado_rtl5.png](https://s3.qrunch.io/8c46f6a89469e61f1ec66bbc267de08d.png)
+
 ‚»‚Ì‚Ü‚Ü Finish ‚ğ‰Ÿ‚µ‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/08a96ca9fe0f232692b45ef21de6f2ed.png)
+
 ƒ|[ƒg‚ğ•·‚¢‚Ä‚«‚Ü‚·‚ªAOK¨OK‚Æi‚ß‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/e724091fa7a9a32de686e06326b6acf8.png)
 
 ƒtƒ@ƒCƒ‹‚ªo—ˆã‚ª‚Á‚½‚Ì‚Å‚±‚ê‚ğŠJ‚¢‚Ä•ÒW‚µ‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/890940e695795a522c8e13659a8db9a2.png)
+
 
 ¡‰ñ‘‚¢‚½ƒR[ƒh‚Í‚±‚ñ‚ÈŠ´‚¶‚Å‚·BVerilog 2001 ‚Ì\•¶‚Å‹LÚ‚µ‚Ä‚¢‚Ü‚·B
 
@@ -193,34 +239,54 @@ endmodule
 
 RTLƒvƒƒOƒ‰ƒ€‚ª‚Å‚«‚½‚Æ‚±‚ë‚Å‘‘¬‡¬‚µ‚Ä‚İ‚Ü‚·B
 ã•”‚Ì‡¬ƒ{ƒ^ƒ“‚©‚ç uRun Synthesisv‚ğ‰Ÿ‚µ‚Ü‚·B
+
 ![vivado_rtl9.png](https://s3.qrunch.io/1fa3df723172e9cccaa8d63600089088.png)
+
 
 Ÿ‚ÉLaunch Runs ‚Æ‚¢‚¤ƒ_ƒCƒAƒƒO‚ªo‚Ä‚«‚Ü‚·‚ªA‚»‚Ì‚Ü‚ÜOK‚Å\‚¢‚Ü‚¹‚ñB
 ‡¬‚·‚éPC‚ªƒ}ƒ‹ƒ`ƒRƒACPU‚Ìê‡ANumber of jobs ‚Ì•”•ª‚Å2ˆÈã‚ğw’è‚·‚é‚Æ•À—ñ‚Éˆ—‚ªs‚¦‚Ü‚·B
+
 ![vivado_rtl10.png](https://s3.qrunch.io/adffd742a2b1b059ed72e676115fbd83.png)
+
 
 ‡¬‚É‚Í‚µ‚Î‚ç‚­ŠÔ‚ª‚©‚©‚è‚Ü‚·‚ªAŠ®—¹‚·‚é‚ÆŸ‚Ì‚æ‚¤‚Èƒ_ƒCƒAƒƒO‚ªo‚é‚Ì‚Å
 uOpen Synthesized Designv‚ğ‘I‚ñ‚ÅOK‚ğ‰Ÿ‚·‚ÆA‡¬Ï‚İ‚ÌƒfƒUƒCƒ“‚ªŠJ‚¯‚Ü‚·B
+
 ![vivado_rtl11.png](https://s3.qrunch.io/d757427f60c83ca91e6d637cf0eddc81.png)
+
 ‚È‚¨‚±‚±‚Å‘I‚Ñ‘¹‚Ë‚½ê‡‚Å‚àAvivado‚Ì¶’[‚É‚ ‚éFlow Navigator‚©‚çuOpen Synthesised Designv‚ğ‘I‚×‚Î‚¢‚Â‚Å‚àŠJ‚¯‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/cbc33054ec1a7e03c326a53b10e94aac.png)
 
+
 ƒƒjƒ…[‚ÌuLayoutv¨uI/O Planningv‚ğ‘I‚Ñ‚Ü‚·B‚±‚±‚©‚çLSI‚Ì’[qŠ„‚è“–‚Ä‚ğs‚¢‚Ü‚·B
+
 ![vivado_rtl13.png](https://s3.qrunch.io/4df8095e775d1b2e5b9c0b9ffc71da03.png)
 
+
 Ultra96-V2 Hardware User's Guide(Ultra96-V2-HW-User-Guide-rev-1-0-V1_0_Preliminary_0.pdf)‚Ì10ƒy[ƒW–Ú‚É‚ ‚é A9, B9 ’[q‚É RAIDIO_LED ‚ªŒq‚ª‚Á‚Ä‚¢‚Ü‚·B
+
 ![manual_1.png](https://s3.qrunch.io/c8f2e2b42d2c78a95b6a390c320d6b21.png)
 
+
 ‚»‚±‚ÅGUI‚©‚çŠe’[q‚ğ}‚Ì‚æ‚¤‚Éİ’è‚µ‚Ü‚·BI/O Std ‚Ì‚Æ‚±‚ë‚Í LVCMOS18 ‚ğ‘I‚ñ‚Å‚­‚¾‚³‚¢B
+
 ![undefined.jpg](https://s3.qrunch.io/e4ecc5fc118f614f5a23827049705258.png)
+
 ‚±‚±‚Åˆê“x•Û‘¶‚µ‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/e5b7e95ee5c21c7296e3296976479f58.png)
+
 ‰º‹L‚Ì‚æ‚¤‚Èƒ_ƒCƒAƒƒO‚ªo‚Ü‚·‚ªA‹C‚É‚¹‚¸OK‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢B
 (’[qŠ„‚è“–‚Ä‚É‚æ‚è§–ñƒtƒ@ƒCƒ‹‚ªV‚µ‚­‚È‚Á‚½‚Ì‚Å‡¬‚ğ‚â‚è‚È‚¨‚µ‚½•û‚ª—Ç‚¢‚©‚à‚µ‚ê‚È‚¢‚ÆŒ¾‚Á‚Ä‚«‚Ä‚¢‚Ü‚·)
+
 ![undefined.jpg](https://s3.qrunch.io/fad08f0f6eb117b2bca4787e1c0b155f.png)
 
+
 ¡ì‚Á‚½’[qŠ„‚è“–‚Ä‚È‚Ç‚Ì§–ñ‚ğ•Û‘¶‚·‚éƒtƒ@ƒCƒ‹–¼‚ğ•·‚¢‚Ä‚«‚Ü‚·B¡‰ñ‚Í ultra96v2_ledt.xdc ‚Æ‚µ‚ÄOK‚ğ‰Ÿ‚µ‚Ü‚µ‚½B
+
 ![vivado_rtl17.png](https://s3.qrunch.io/6c01723614de5a880c928f2ee1558e4c.png)
+
 
 ‚¿‚È‚İ‚É‚±‚ÌAˆÈ‰º‚Ì‚æ‚¤‚Èƒtƒ@ƒCƒ‹‚ª¶¬‚³‚ê‚Ä‚¢‚Ü‚·B
 ```ultra96_led.xdc
@@ -234,15 +300,21 @@ set_property IOSTANDARD LVCMOS18 [get_ports {led[0]}]
 ‚±‚Ì§–ñƒtƒ@ƒCƒ‹‚ÍA’[qŠ„‚è“–‚Ä‚¾‚¯‚Å‚È‚­Aƒ^ƒCƒ~ƒ“ƒO§–ñ‚âA”z’u”zü‚Ì§–ñ‚È‚Ç—lX‚ÈRTL‹LqˆÈŠO‚É•K—v‚È§–ñ–€‚Ì‹Lq‚Ég‚í‚ê‚Ü‚·B
 
 ÅŒã‚É Generate Bitstream ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/2cfa1ccd51ca41d9f5e61ff555cab5a4.png)
+
 ‚Ü‚½‡¬‚Æ“¯‚¶ƒ_ƒCƒAƒƒO‚ª‚Å‚Ü‚·‚ªOK‚ğ‰Ÿ‚·‚Æ bitstream ‚Ì¶¬‚Ü‚Å‘–‚èn‚ß‚Ü‚·B
 
 –³–‡¬‚ªI‚í‚è‚Ü‚µ‚½B
+
 ![undefined.jpg](https://s3.qrunch.io/abe0bab5c379aea5629d8b3988be1db6.png)
+
 ˆê’U View Reports ‚ğ‘I‚ñ‚ÅOK‚ğ‰Ÿ‚µ‚Ü‚µ‚å‚¤B
 
 ultra96v2_led.runs\impl_1 ‚Ì‰º‚É ultra96v2_led.bit ‚ª‚Å‚«‚Ä‚¢‚é‚±‚Æ‚ªŠm”F‚Å‚«‚é‚Æv‚¢‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/fd5e43edf48fb4e0893ea7943f5292be.png)
+
 ‚±‚Ì ultra96v2_led.bit ‚ªPL‚Éƒ_ƒEƒ“ƒ[ƒh‚·‚éƒrƒbƒgƒXƒgƒŠ[ƒ€‚Æ‚È‚è‚Ü‚·B
 
 –{‹L–‚Å‚Íˆê’U‚±‚±‚Ü‚Å‚Å‚·B
@@ -251,16 +323,24 @@ ultra96v2_led.runs\impl_1 ‚Ì‰º‚É ultra96v2_led.bit ‚ª‚Å‚«‚Ä‚¢‚é‚±‚Æ‚ªŠm”F‚Å‚«‚é‚
 # ‰ñ˜H}‚ÌŠm”F(‚¨‚Ü‚¯)
 
 ­‚µ—]’k‚Å‚·‚ªALEDü‚è‚Ì‰ñ˜H}‚ÌŠm”F‚É‚Â‚¢‚ÄA‘O’u‚«‚à‚È‚­LVCMOS18‚ğw’è‚µ‚Ü‚µ‚½‚ª‚»‚Ìà–¾‚Å‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/3ae7330fe70e122d75e613351cbfdc5a.png)
+
 ‰ñ˜H}‚ğ’Ç‚Á‚Ä‚¢‚­‚ÆA‚Ü‚¸[HSMY-C191](https://docs.broadcom.com/doc/AV02-0551EN)‚Æ‚¢‚¤LED‚ª260ƒ¶‚Ì’ïR‚Æ’¼—ñ‚ÉŒq‚ª‚èA[FDY3000NZ](https://www.onsemi.jp/pub/Collateral/FDY3000NZJP-D.pdf)‚Æ‚¢‚¤FET‚ğ‰î‚µ‚ÄFPGA‚©‚ç§Œä‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ª“Ç‚İ‰ğ‚¯‚é‚©‚Æv‚¢‚Ü‚·B
 ‚»‚µ‚ÄAFET‚ÌƒQ[ƒg’[q‚ÍFPGA‚ÌBANK26‚ÉŒq‚ª‚Á‚Ä‚¨‚è‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/06c50610b3af55349c68bf3cc88ba975.png)
 
+
 BANK26‚ÌI/O“dŒ¹‚Å‚ ‚é VCCO_26‚É‚Í +VCCAUX ‚ªÚ‘±‚³‚ê‚Ä‚¨‚è
+
 ![undefined.jpg](https://s3.qrunch.io/e40d6b2b584b6b3e91cbd3446038ec26.png)
 
+
 +VCCAUX ‚Í“dŒ¹‰ñ˜H‚©‚ç 1.8V ‚ª‹Ÿ‹‹‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ª‚í‚©‚è‚Ü‚·B
+
 ![undefined.jpg](https://s3.qrunch.io/3ecfadeb2c4497880fe24c1732bfe627.png)
+
 
 BANK26‚ÌI/O“dŒ¹‚ª1.8V‚Å‚·‚Ì‚ÅLVCMOS18‚ğw’è‚·‚é‚±‚Æ‚É‚È‚è‚Ü‚·‚ªA‚à‚¤­‚µLED•”•ª‚ğ[‚­“Ç‚ñ‚Å‚¨‚«‚Ü‚·B
 HSMY-C191 ‚àAFDY3000NZ ‚àŒŸõ‚·‚ê‚Î‚»‚ê‚¼‚ê‚Ìƒf[ƒ^ƒV[ƒg‚É‚½‚Ç‚è’…‚­‚±‚Æ‚ª‚Å‚«‚Ü‚·B
