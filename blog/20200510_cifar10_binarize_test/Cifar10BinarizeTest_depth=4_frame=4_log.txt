@@ -1,0 +1,246 @@
+----------------------------------------------------------------------
+[Sequential] 
+  --------------------------------------------------------------------
+  [BinaryModulation] 
+   training  modulation size : 4
+   inference modulation size : 4
+    ------------------------------------------------------------------
+    [RealToBinary] 
+     input  shape : {32, 32, 3}     output shape : {32, 32, 12}
+    ------------------------------------------------------------------
+    [Sequential] 
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {32, 32, 12}       output shape : {30, 30, 32}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {32, 32, 12}         output shape : {3, 3, 12}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 12}           output shape : {32}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {32}           output shape : {32}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {32}           output shape : {32}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {32}         output shape : {30, 30, 32}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {30, 30, 32}       output shape : {28, 28, 64}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {30, 30, 32}         output shape : {3, 3, 32}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 32}           output shape : {64}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {64}           output shape : {64}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {64}           output shape : {64}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {64}         output shape : {28, 28, 64}
+      ----------------------------------------------------------------
+      [MaxPooling] 
+       filter size : (2, 2)
+       input  shape : {28, 28, 64}       output shape : {14, 14, 64}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {14, 14, 64}       output shape : {12, 12, 64}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {14, 14, 64}         output shape : {3, 3, 64}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 64}           output shape : {64}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {64}           output shape : {64}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {64}           output shape : {64}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {64}         output shape : {12, 12, 64}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {12, 12, 64}       output shape : {10, 10, 128}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {12, 12, 64}         output shape : {3, 3, 64}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 64}           output shape : {128}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {128}           output shape : {128}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {128}           output shape : {128}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {128}         output shape : {10, 10, 128}
+      ----------------------------------------------------------------
+      [MaxPooling] 
+       filter size : (2, 2)
+       input  shape : {10, 10, 128}       output shape : {5, 5, 128}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {5, 5, 128}       output shape : {3, 3, 128}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {5, 5, 128}         output shape : {3, 3, 128}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 128}           output shape : {128}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {128}           output shape : {128}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {128}           output shape : {128}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {128}         output shape : {3, 3, 128}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {3, 3, 128}       output shape : {1, 1, 256}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {3, 3, 128}         output shape : {3, 3, 128}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 128}           output shape : {256}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {256}           output shape : {256}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {256}           output shape : {256}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {256}         output shape : {1, 1, 256}
+      ----------------------------------------------------------------
+      [DenseAffine] 
+       input  shape : {1, 1, 256}       output shape : {512}
+      ----------------------------------------------------------------
+      [BatchNormalization] 
+       input  shape : {512}       output shape : {512}
+       momentum : 0.9
+      ----------------------------------------------------------------
+      [ReLU] 
+       binary : 1
+       input  shape : {512}       output shape : {512}
+      ----------------------------------------------------------------
+      [DenseAffine] 
+       input  shape : {512}       output shape : {10}
+      ----------------------------------------------------------------
+      [BatchNormalization] 
+       input  shape : {10}       output shape : {10}
+       momentum : 0.9
+      ----------------------------------------------------------------
+      [ReLU] 
+       binary : 1
+       input  shape : {10}       output shape : {10}
+    ------------------------------------------------------------------
+    [BinaryToReal] 
+     input  shape : {10}     output shape : {10}
+----------------------------------------------------------------------
+-----------------------------------
+epoch_size      : 256
+mini_batch_size : 128
+-----------------------------------
+fitting start : Cifar10BinarizeTest_depth=4_frame=4
+[initial] test accuracy : 0.0984  test loss : 2.3906  train accuracy : 0.0946  train loss : 2.3938
+     70.23s epoch[  1] test accuracy : 0.3675  test loss : 1.9128  train accuracy : 0.3688  train loss : 1.9079
+    170.58s epoch[  2] test accuracy : 0.3870  test loss : 1.8609  train accuracy : 0.3869  train loss : 1.8546
+    270.95s epoch[  3] test accuracy : 0.4497  test loss : 1.8441  train accuracy : 0.4625  train loss : 1.8303
+    371.39s epoch[  4] test accuracy : 0.4637  test loss : 1.8337  train accuracy : 0.4751  train loss : 1.8192
+    472.82s epoch[  5] test accuracy : 0.4597  test loss : 1.8482  train accuracy : 0.4678  train loss : 1.8350
+    570.99s epoch[  6] test accuracy : 0.5229  test loss : 1.8033  train accuracy : 0.5397  train loss : 1.7865
+    670.24s epoch[  7] test accuracy : 0.5423  test loss : 1.7950  train accuracy : 0.5707  train loss : 1.7714
+    771.05s epoch[  8] test accuracy : 0.5051  test loss : 1.7850  train accuracy : 0.5336  train loss : 1.7575
+    868.11s epoch[  9] test accuracy : 0.6066  test loss : 1.7734  train accuracy : 0.6409  train loss : 1.7426
+    965.39s epoch[ 10] test accuracy : 0.6121  test loss : 1.7712  train accuracy : 0.6363  train loss : 1.7433
+   1063.09s epoch[ 11] test accuracy : 0.6212  test loss : 1.7446  train accuracy : 0.6645  train loss : 1.7103
+   1161.53s epoch[ 12] test accuracy : 0.5897  test loss : 1.7713  train accuracy : 0.6286  train loss : 1.7368
+   1258.78s epoch[ 13] test accuracy : 0.6285  test loss : 1.7415  train accuracy : 0.6682  train loss : 1.7060
+   1356.86s epoch[ 14] test accuracy : 0.6215  test loss : 1.7359  train accuracy : 0.6718  train loss : 1.6939
+   1454.65s epoch[ 15] test accuracy : 0.6264  test loss : 1.7402  train accuracy : 0.6757  train loss : 1.7002
+   1554.24s epoch[ 16] test accuracy : 0.5792  test loss : 1.7737  train accuracy : 0.6236  train loss : 1.7350
+   1651.65s epoch[ 17] test accuracy : 0.6525  test loss : 1.7250  train accuracy : 0.7039  train loss : 1.6798
+   1750.42s epoch[ 18] test accuracy : 0.6455  test loss : 1.7338  train accuracy : 0.6993  train loss : 1.6863
+   1851.57s epoch[ 19] test accuracy : 0.6174  test loss : 1.7348  train accuracy : 0.6733  train loss : 1.6886
+   1952.05s epoch[ 20] test accuracy : 0.6533  test loss : 1.7169  train accuracy : 0.7106  train loss : 1.6670
+   2052.99s epoch[ 21] test accuracy : 0.6542  test loss : 1.7244  train accuracy : 0.7114  train loss : 1.6729
+   2153.55s epoch[ 22] test accuracy : 0.6757  test loss : 1.7090  train accuracy : 0.7394  train loss : 1.6553
+   2255.17s epoch[ 23] test accuracy : 0.6489  test loss : 1.7241  train accuracy : 0.7069  train loss : 1.6733
+   2357.13s epoch[ 24] test accuracy : 0.6870  test loss : 1.7037  train accuracy : 0.7540  train loss : 1.6484
+   2459.20s epoch[ 25] test accuracy : 0.6699  test loss : 1.7118  train accuracy : 0.7390  train loss : 1.6561
+   2562.57s epoch[ 26] test accuracy : 0.6953  test loss : 1.7142  train accuracy : 0.7637  train loss : 1.6569
+   2665.18s epoch[ 27] test accuracy : 0.6855  test loss : 1.7154  train accuracy : 0.7568  train loss : 1.6555
+   2769.21s epoch[ 28] test accuracy : 0.6578  test loss : 1.7150  train accuracy : 0.7341  train loss : 1.6543
+   2872.49s epoch[ 29] test accuracy : 0.6646  test loss : 1.7129  train accuracy : 0.7344  train loss : 1.6520
+   2975.27s epoch[ 30] test accuracy : 0.6771  test loss : 1.7182  train accuracy : 0.7483  train loss : 1.6570
+   3078.03s epoch[ 31] test accuracy : 0.7038  test loss : 1.6993  train accuracy : 0.7909  train loss : 1.6338
+   3180.43s epoch[ 32] test accuracy : 0.7026  test loss : 1.6925  train accuracy : 0.7879  train loss : 1.6249
+   3282.44s epoch[ 33] test accuracy : 0.6907  test loss : 1.7109  train accuracy : 0.7656  train loss : 1.6466
+   3384.73s epoch[ 34] test accuracy : 0.7019  test loss : 1.6974  train accuracy : 0.7817  train loss : 1.6305
+   3487.21s epoch[ 35] test accuracy : 0.7011  test loss : 1.6995  train accuracy : 0.7792  train loss : 1.6333
+   3589.90s epoch[ 36] test accuracy : 0.6996  test loss : 1.6982  train accuracy : 0.7900  train loss : 1.6269
+   3692.98s epoch[ 37] test accuracy : 0.6979  test loss : 1.6992  train accuracy : 0.7839  train loss : 1.6273
+   3795.49s epoch[ 38] test accuracy : 0.6599  test loss : 1.7373  train accuracy : 0.7231  train loss : 1.6756
+   3897.11s epoch[ 39] test accuracy : 0.7168  test loss : 1.6935  train accuracy : 0.8020  train loss : 1.6237
+   3998.20s epoch[ 40] test accuracy : 0.7202  test loss : 1.6903  train accuracy : 0.8128  train loss : 1.6187
+   4099.63s epoch[ 41] test accuracy : 0.7247  test loss : 1.6883  train accuracy : 0.8150  train loss : 1.6149
+   4201.65s epoch[ 42] test accuracy : 0.7175  test loss : 1.6880  train accuracy : 0.8125  train loss : 1.6100
+   4305.07s epoch[ 43] test accuracy : 0.7120  test loss : 1.7011  train accuracy : 0.8069  train loss : 1.6245
+   4408.17s epoch[ 44] test accuracy : 0.7234  test loss : 1.6850  train accuracy : 0.8219  train loss : 1.6096
+   4510.77s epoch[ 45] test accuracy : 0.7120  test loss : 1.6974  train accuracy : 0.8075  train loss : 1.6199
+   4613.48s epoch[ 46] test accuracy : 0.7326  test loss : 1.6865  train accuracy : 0.8341  train loss : 1.6066
+   4716.60s epoch[ 47] test accuracy : 0.7008  test loss : 1.7036  train accuracy : 0.7989  train loss : 1.6247
+   4819.60s epoch[ 48] test accuracy : 0.7119  test loss : 1.6950  train accuracy : 0.8059  train loss : 1.6152
+   4923.13s epoch[ 49] test accuracy : 0.7324  test loss : 1.6920  train accuracy : 0.8352  train loss : 1.6113
+   5025.01s epoch[ 50] test accuracy : 0.7358  test loss : 1.6880  train accuracy : 0.8438  train loss : 1.6037
+   5127.19s epoch[ 51] test accuracy : 0.7309  test loss : 1.6848  train accuracy : 0.8392  train loss : 1.5994
+   5229.20s epoch[ 52] test accuracy : 0.7103  test loss : 1.6886  train accuracy : 0.8116  train loss : 1.6053
+   5331.06s epoch[ 53] test accuracy : 0.7052  test loss : 1.6918  train accuracy : 0.8077  train loss : 1.6088
+   5433.77s epoch[ 54] test accuracy : 0.7251  test loss : 1.6822  train accuracy : 0.8416  train loss : 1.5926
+   5536.25s epoch[ 55] test accuracy : 0.7123  test loss : 1.6967  train accuracy : 0.8273  train loss : 1.6083
+   5637.76s epoch[ 56] test accuracy : 0.7306  test loss : 1.6886  train accuracy : 0.8417  train loss : 1.5991
+   5739.58s epoch[ 57] test accuracy : 0.7012  test loss : 1.7015  train accuracy : 0.8042  train loss : 1.6177
