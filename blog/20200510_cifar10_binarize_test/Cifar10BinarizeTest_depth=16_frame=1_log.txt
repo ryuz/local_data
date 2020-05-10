@@ -1,0 +1,447 @@
+----------------------------------------------------------------------
+[Sequential] 
+  --------------------------------------------------------------------
+  [BinaryModulation] 
+   training  modulation size : 1
+   inference modulation size : 1
+    ------------------------------------------------------------------
+    [RealToBinary] 
+     input  shape : {32, 32, 3}     output shape : {32, 32, 48}
+    ------------------------------------------------------------------
+    [Sequential] 
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {32, 32, 48}       output shape : {30, 30, 32}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {32, 32, 48}         output shape : {3, 3, 48}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 48}           output shape : {32}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {32}           output shape : {32}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {32}           output shape : {32}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {32}         output shape : {30, 30, 32}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {30, 30, 32}       output shape : {28, 28, 64}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {30, 30, 32}         output shape : {3, 3, 32}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 32}           output shape : {64}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {64}           output shape : {64}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {64}           output shape : {64}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {64}         output shape : {28, 28, 64}
+      ----------------------------------------------------------------
+      [MaxPooling] 
+       filter size : (2, 2)
+       input  shape : {28, 28, 64}       output shape : {14, 14, 64}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {14, 14, 64}       output shape : {12, 12, 64}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {14, 14, 64}         output shape : {3, 3, 64}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 64}           output shape : {64}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {64}           output shape : {64}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {64}           output shape : {64}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {64}         output shape : {12, 12, 64}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {12, 12, 64}       output shape : {10, 10, 128}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {12, 12, 64}         output shape : {3, 3, 64}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 64}           output shape : {128}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {128}           output shape : {128}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {128}           output shape : {128}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {128}         output shape : {10, 10, 128}
+      ----------------------------------------------------------------
+      [MaxPooling] 
+       filter size : (2, 2)
+       input  shape : {10, 10, 128}       output shape : {5, 5, 128}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {5, 5, 128}       output shape : {3, 3, 128}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {5, 5, 128}         output shape : {3, 3, 128}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 128}           output shape : {128}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {128}           output shape : {128}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {128}           output shape : {128}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {128}         output shape : {3, 3, 128}
+      ----------------------------------------------------------------
+      [LoweringConvolution] 
+       filter size : (3, 3)
+       input  shape : {3, 3, 128}       output shape : {1, 1, 256}
+        --------------------------------------------------------------
+        [ConvolutionIm2Col] 
+         input  shape : {3, 3, 128}         output shape : {3, 3, 128}
+        --------------------------------------------------------------
+        [Sequential] 
+          ------------------------------------------------------------
+          [DenseAffine] 
+           input  shape : {3, 3, 128}           output shape : {256}
+          ------------------------------------------------------------
+          [BatchNormalization] 
+           input  shape : {256}           output shape : {256}
+           momentum : 0.9
+          ------------------------------------------------------------
+          [ReLU] 
+           binary : 1
+           input  shape : {256}           output shape : {256}
+        --------------------------------------------------------------
+        [ConvolutionCol2Im] 
+         input  shape : {256}         output shape : {1, 1, 256}
+      ----------------------------------------------------------------
+      [DenseAffine] 
+       input  shape : {1, 1, 256}       output shape : {512}
+      ----------------------------------------------------------------
+      [BatchNormalization] 
+       input  shape : {512}       output shape : {512}
+       momentum : 0.9
+      ----------------------------------------------------------------
+      [ReLU] 
+       binary : 1
+       input  shape : {512}       output shape : {512}
+      ----------------------------------------------------------------
+      [DenseAffine] 
+       input  shape : {512}       output shape : {10}
+      ----------------------------------------------------------------
+      [BatchNormalization] 
+       input  shape : {10}       output shape : {10}
+       momentum : 0.9
+      ----------------------------------------------------------------
+      [ReLU] 
+       binary : 1
+       input  shape : {10}       output shape : {10}
+    ------------------------------------------------------------------
+    [BinaryToReal] 
+     input  shape : {10}     output shape : {10}
+----------------------------------------------------------------------
+-----------------------------------
+epoch_size      : 256
+mini_batch_size : 128
+-----------------------------------
+fitting start : Cifar10BinarizeTest_depth=16_frame=1
+[initial] test accuracy : 0.0960  test loss : 2.4201  train accuracy : 0.0984  train loss : 2.4211
+     35.31s epoch[  1] test accuracy : 0.2483  test loss : 1.9704  train accuracy : 0.2488  train loss : 1.9664
+     79.01s epoch[  2] test accuracy : 0.2450  test loss : 2.0055  train accuracy : 0.2479  train loss : 2.0028
+    123.13s epoch[  3] test accuracy : 0.3769  test loss : 1.8373  train accuracy : 0.3881  train loss : 1.8249
+    167.42s epoch[  4] test accuracy : 0.3776  test loss : 1.8365  train accuracy : 0.3867  train loss : 1.8240
+    211.45s epoch[  5] test accuracy : 0.3975  test loss : 1.8952  train accuracy : 0.3952  train loss : 1.8820
+    255.32s epoch[  6] test accuracy : 0.3960  test loss : 1.8325  train accuracy : 0.4094  train loss : 1.8062
+    299.11s epoch[  7] test accuracy : 0.4547  test loss : 1.7908  train accuracy : 0.4686  train loss : 1.7615
+    343.00s epoch[  8] test accuracy : 0.4389  test loss : 1.8097  train accuracy : 0.4557  train loss : 1.7806
+    387.09s epoch[  9] test accuracy : 0.4846  test loss : 1.7884  train accuracy : 0.5011  train loss : 1.7514
+    430.63s epoch[ 10] test accuracy : 0.4928  test loss : 1.7703  train accuracy : 0.5148  train loss : 1.7284
+    474.22s epoch[ 11] test accuracy : 0.5134  test loss : 1.7669  train accuracy : 0.5341  train loss : 1.7331
+    517.76s epoch[ 12] test accuracy : 0.5325  test loss : 1.7507  train accuracy : 0.5634  train loss : 1.7009
+    561.45s epoch[ 13] test accuracy : 0.4824  test loss : 1.7775  train accuracy : 0.5104  train loss : 1.7301
+    605.17s epoch[ 14] test accuracy : 0.5064  test loss : 1.7500  train accuracy : 0.5408  train loss : 1.6970
+    648.67s epoch[ 15] test accuracy : 0.4616  test loss : 1.7710  train accuracy : 0.4817  train loss : 1.7257
+    691.92s epoch[ 16] test accuracy : 0.5741  test loss : 1.7337  train accuracy : 0.6198  train loss : 1.6791
+    735.32s epoch[ 17] test accuracy : 0.5586  test loss : 1.7626  train accuracy : 0.6071  train loss : 1.7075
+    779.07s epoch[ 18] test accuracy : 0.5294  test loss : 1.7435  train accuracy : 0.5640  train loss : 1.6837
+    822.55s epoch[ 19] test accuracy : 0.5434  test loss : 1.7467  train accuracy : 0.5820  train loss : 1.6877
+    865.98s epoch[ 20] test accuracy : 0.5262  test loss : 1.7370  train accuracy : 0.5696  train loss : 1.6776
+    909.24s epoch[ 21] test accuracy : 0.5423  test loss : 1.7341  train accuracy : 0.5885  train loss : 1.6628
+    952.64s epoch[ 22] test accuracy : 0.5587  test loss : 1.7343  train accuracy : 0.6124  train loss : 1.6601
+    996.07s epoch[ 23] test accuracy : 0.5585  test loss : 1.7402  train accuracy : 0.6115  train loss : 1.6690
+   1039.36s epoch[ 24] test accuracy : 0.5846  test loss : 1.7362  train accuracy : 0.6356  train loss : 1.6771
+   1082.46s epoch[ 25] test accuracy : 0.5629  test loss : 1.7214  train accuracy : 0.6109  train loss : 1.6476
+   1125.71s epoch[ 26] test accuracy : 0.5940  test loss : 1.7284  train accuracy : 0.6497  train loss : 1.6610
+   1168.81s epoch[ 27] test accuracy : 0.5951  test loss : 1.7241  train accuracy : 0.6623  train loss : 1.6421
+   1211.95s epoch[ 28] test accuracy : 0.5612  test loss : 1.7161  train accuracy : 0.6198  train loss : 1.6383
+   1255.35s epoch[ 29] test accuracy : 0.5874  test loss : 1.7245  train accuracy : 0.6532  train loss : 1.6439
+   1298.66s epoch[ 30] test accuracy : 0.5942  test loss : 1.7204  train accuracy : 0.6699  train loss : 1.6403
+   1342.07s epoch[ 31] test accuracy : 0.5793  test loss : 1.7232  train accuracy : 0.6444  train loss : 1.6404
+   1385.43s epoch[ 32] test accuracy : 0.6079  test loss : 1.7124  train accuracy : 0.6784  train loss : 1.6245
+   1428.86s epoch[ 33] test accuracy : 0.6221  test loss : 1.7062  train accuracy : 0.6920  train loss : 1.6214
+   1472.04s epoch[ 34] test accuracy : 0.5812  test loss : 1.7103  train accuracy : 0.6377  train loss : 1.6239
+   1515.13s epoch[ 35] test accuracy : 0.6415  test loss : 1.7115  train accuracy : 0.7201  train loss : 1.6240
+   1558.57s epoch[ 36] test accuracy : 0.6265  test loss : 1.7182  train accuracy : 0.7032  train loss : 1.6271
+   1601.82s epoch[ 37] test accuracy : 0.6016  test loss : 1.7109  train accuracy : 0.6788  train loss : 1.6157
+   1645.09s epoch[ 38] test accuracy : 0.6132  test loss : 1.7274  train accuracy : 0.6824  train loss : 1.6389
+   1688.47s epoch[ 39] test accuracy : 0.6368  test loss : 1.6955  train accuracy : 0.7214  train loss : 1.5996
+   1731.84s epoch[ 40] test accuracy : 0.6014  test loss : 1.7137  train accuracy : 0.6805  train loss : 1.6143
+   1775.88s epoch[ 41] test accuracy : 0.6299  test loss : 1.7051  train accuracy : 0.7124  train loss : 1.6088
+   1819.92s epoch[ 42] test accuracy : 0.6192  test loss : 1.7015  train accuracy : 0.6956  train loss : 1.6079
+   1863.40s epoch[ 43] test accuracy : 0.6122  test loss : 1.7093  train accuracy : 0.6890  train loss : 1.6114
+   1906.67s epoch[ 44] test accuracy : 0.6464  test loss : 1.6997  train accuracy : 0.7417  train loss : 1.5966
+   1949.94s epoch[ 45] test accuracy : 0.6189  test loss : 1.7183  train accuracy : 0.7026  train loss : 1.6232
+   1993.07s epoch[ 46] test accuracy : 0.6557  test loss : 1.7185  train accuracy : 0.7549  train loss : 1.6227
+   2036.34s epoch[ 47] test accuracy : 0.6422  test loss : 1.6992  train accuracy : 0.7274  train loss : 1.6005
+   2087.90s epoch[ 48] test accuracy : 0.6313  test loss : 1.6976  train accuracy : 0.7168  train loss : 1.5969
+   2131.18s epoch[ 49] test accuracy : 0.6400  test loss : 1.7316  train accuracy : 0.7184  train loss : 1.6488
+   2174.40s epoch[ 50] test accuracy : 0.6411  test loss : 1.6923  train accuracy : 0.7370  train loss : 1.5838
+   2217.57s epoch[ 51] test accuracy : 0.6214  test loss : 1.7116  train accuracy : 0.7146  train loss : 1.6053
+   2260.91s epoch[ 52] test accuracy : 0.6350  test loss : 1.7045  train accuracy : 0.7380  train loss : 1.5941
+   2304.12s epoch[ 53] test accuracy : 0.6389  test loss : 1.7019  train accuracy : 0.7359  train loss : 1.5916
+   2347.09s epoch[ 54] test accuracy : 0.6416  test loss : 1.6987  train accuracy : 0.7402  train loss : 1.5854
+   2390.26s epoch[ 55] test accuracy : 0.6638  test loss : 1.6938  train accuracy : 0.7730  train loss : 1.5820
+   2433.25s epoch[ 56] test accuracy : 0.6655  test loss : 1.6967  train accuracy : 0.7698  train loss : 1.5775
+   2476.39s epoch[ 57] test accuracy : 0.6429  test loss : 1.6964  train accuracy : 0.7396  train loss : 1.5830
+   2519.42s epoch[ 58] test accuracy : 0.6485  test loss : 1.6975  train accuracy : 0.7445  train loss : 1.5873
+   2562.63s epoch[ 59] test accuracy : 0.6599  test loss : 1.6990  train accuracy : 0.7635  train loss : 1.5846
+   2605.90s epoch[ 60] test accuracy : 0.6403  test loss : 1.6941  train accuracy : 0.7459  train loss : 1.5807
+   2649.32s epoch[ 61] test accuracy : 0.6438  test loss : 1.6954  train accuracy : 0.7455  train loss : 1.5776
+   2692.47s epoch[ 62] test accuracy : 0.6595  test loss : 1.6901  train accuracy : 0.7725  train loss : 1.5724
+   2735.72s epoch[ 63] test accuracy : 0.6546  test loss : 1.7007  train accuracy : 0.7658  train loss : 1.5787
+   2778.91s epoch[ 64] test accuracy : 0.6516  test loss : 1.6942  train accuracy : 0.7546  train loss : 1.5785
+   2824.75s epoch[ 65] test accuracy : 0.6617  test loss : 1.7048  train accuracy : 0.7755  train loss : 1.5812
+   2867.98s epoch[ 66] test accuracy : 0.6512  test loss : 1.7058  train accuracy : 0.7614  train loss : 1.5857
+   2911.53s epoch[ 67] test accuracy : 0.6427  test loss : 1.7064  train accuracy : 0.7555  train loss : 1.5834
+   2954.71s epoch[ 68] test accuracy : 0.6604  test loss : 1.6989  train accuracy : 0.7859  train loss : 1.5687
+   2997.83s epoch[ 69] test accuracy : 0.6580  test loss : 1.6979  train accuracy : 0.7737  train loss : 1.5781
+   3040.91s epoch[ 70] test accuracy : 0.6545  test loss : 1.6979  train accuracy : 0.7756  train loss : 1.5683
+   3084.03s epoch[ 71] test accuracy : 0.6677  test loss : 1.6891  train accuracy : 0.7818  train loss : 1.5673
+   3127.18s epoch[ 72] test accuracy : 0.6558  test loss : 1.6994  train accuracy : 0.7766  train loss : 1.5728
+   3170.21s epoch[ 73] test accuracy : 0.6524  test loss : 1.6981  train accuracy : 0.7740  train loss : 1.5722
+   3213.61s epoch[ 74] test accuracy : 0.6434  test loss : 1.6998  train accuracy : 0.7554  train loss : 1.5744
+   3257.04s epoch[ 75] test accuracy : 0.6484  test loss : 1.6938  train accuracy : 0.7676  train loss : 1.5633
+   3300.18s epoch[ 76] test accuracy : 0.6692  test loss : 1.6937  train accuracy : 0.8026  train loss : 1.5580
+   3343.68s epoch[ 77] test accuracy : 0.6563  test loss : 1.7003  train accuracy : 0.7778  train loss : 1.5697
+   3387.07s epoch[ 78] test accuracy : 0.6800  test loss : 1.6969  train accuracy : 0.8123  train loss : 1.5614
+   3430.31s epoch[ 79] test accuracy : 0.6648  test loss : 1.6921  train accuracy : 0.7859  train loss : 1.5633
+   3473.70s epoch[ 80] test accuracy : 0.6691  test loss : 1.6989  train accuracy : 0.7918  train loss : 1.5710
+   3517.43s epoch[ 81] test accuracy : 0.6871  test loss : 1.6990  train accuracy : 0.8198  train loss : 1.5688
+   3560.99s epoch[ 82] test accuracy : 0.6492  test loss : 1.7166  train accuracy : 0.7661  train loss : 1.5910
+   3604.31s epoch[ 83] test accuracy : 0.6597  test loss : 1.6925  train accuracy : 0.7872  train loss : 1.5558
+   3647.52s epoch[ 84] test accuracy : 0.6570  test loss : 1.6916  train accuracy : 0.7772  train loss : 1.5618
+   3690.91s epoch[ 85] test accuracy : 0.6676  test loss : 1.6923  train accuracy : 0.7998  train loss : 1.5580
+   3734.28s epoch[ 86] test accuracy : 0.6597  test loss : 1.6958  train accuracy : 0.7820  train loss : 1.5639
+   3777.63s epoch[ 87] test accuracy : 0.6570  test loss : 1.7016  train accuracy : 0.7804  train loss : 1.5655
+   3821.05s epoch[ 88] test accuracy : 0.6838  test loss : 1.6963  train accuracy : 0.8158  train loss : 1.5625
+   3864.28s epoch[ 89] test accuracy : 0.6662  test loss : 1.7014  train accuracy : 0.7920  train loss : 1.5712
+   3907.42s epoch[ 90] test accuracy : 0.6617  test loss : 1.6914  train accuracy : 0.7908  train loss : 1.5567
+   3950.43s epoch[ 91] test accuracy : 0.6514  test loss : 1.6967  train accuracy : 0.7718  train loss : 1.5628
+   3993.54s epoch[ 92] test accuracy : 0.6731  test loss : 1.6912  train accuracy : 0.8110  train loss : 1.5507
+   4036.43s epoch[ 93] test accuracy : 0.6618  test loss : 1.6922  train accuracy : 0.7890  train loss : 1.5560
+   4079.43s epoch[ 94] test accuracy : 0.6810  test loss : 1.6931  train accuracy : 0.8227  train loss : 1.5543
+   4122.65s epoch[ 95] test accuracy : 0.6746  test loss : 1.6941  train accuracy : 0.8191  train loss : 1.5499
+   4165.77s epoch[ 96] test accuracy : 0.6801  test loss : 1.6930  train accuracy : 0.8231  train loss : 1.5513
+   4208.94s epoch[ 97] test accuracy : 0.6583  test loss : 1.6936  train accuracy : 0.7948  train loss : 1.5579
+   4252.00s epoch[ 98] test accuracy : 0.6950  test loss : 1.6923  train accuracy : 0.8341  train loss : 1.5545
+   4294.92s epoch[ 99] test accuracy : 0.6731  test loss : 1.6962  train accuracy : 0.8080  train loss : 1.5536
+   4338.09s epoch[100] test accuracy : 0.6850  test loss : 1.6901  train accuracy : 0.8261  train loss : 1.5450
+   4381.21s epoch[101] test accuracy : 0.6656  test loss : 1.6965  train accuracy : 0.8018  train loss : 1.5479
+   4424.22s epoch[102] test accuracy : 0.6846  test loss : 1.6896  train accuracy : 0.8323  train loss : 1.5510
+   4468.57s epoch[103] test accuracy : 0.6856  test loss : 1.6904  train accuracy : 0.8312  train loss : 1.5431
+   4512.49s epoch[104] test accuracy : 0.6796  test loss : 1.6859  train accuracy : 0.8148  train loss : 1.5461
+   4555.58s epoch[105] test accuracy : 0.6693  test loss : 1.6882  train accuracy : 0.8034  train loss : 1.5511
+   4598.70s epoch[106] test accuracy : 0.6774  test loss : 1.6869  train accuracy : 0.8167  train loss : 1.5441
+   4641.98s epoch[107] test accuracy : 0.6886  test loss : 1.6861  train accuracy : 0.8403  train loss : 1.5405
+   4684.92s epoch[108] test accuracy : 0.6839  test loss : 1.6944  train accuracy : 0.8274  train loss : 1.5529
+   4731.85s epoch[109] test accuracy : 0.6817  test loss : 1.6861  train accuracy : 0.8180  train loss : 1.5446
+   4775.88s epoch[110] test accuracy : 0.6778  test loss : 1.6922  train accuracy : 0.8304  train loss : 1.5449
+   4820.49s epoch[111] test accuracy : 0.6750  test loss : 1.6932  train accuracy : 0.8278  train loss : 1.5460
+   4864.17s epoch[112] test accuracy : 0.6857  test loss : 1.6942  train accuracy : 0.8303  train loss : 1.5502
+   4907.73s epoch[113] test accuracy : 0.6616  test loss : 1.6953  train accuracy : 0.7984  train loss : 1.5498
+   4951.22s epoch[114] test accuracy : 0.6509  test loss : 1.7204  train accuracy : 0.7714  train loss : 1.5892
+   4994.40s epoch[115] test accuracy : 0.6808  test loss : 1.6939  train accuracy : 0.8177  train loss : 1.5553
+   5037.96s epoch[116] test accuracy : 0.6845  test loss : 1.6849  train accuracy : 0.8293  train loss : 1.5410
+   5081.39s epoch[117] test accuracy : 0.7055  test loss : 1.6920  train accuracy : 0.8637  train loss : 1.5473
+   5124.87s epoch[118] test accuracy : 0.6801  test loss : 1.6911  train accuracy : 0.8275  train loss : 1.5465
+   5168.27s epoch[119] test accuracy : 0.6751  test loss : 1.6904  train accuracy : 0.8201  train loss : 1.5427
+   5212.82s epoch[120] test accuracy : 0.6865  test loss : 1.6967  train accuracy : 0.8446  train loss : 1.5466
+   5257.96s epoch[121] test accuracy : 0.6975  test loss : 1.6797  train accuracy : 0.8429  train loss : 1.5393
+   5302.19s epoch[122] test accuracy : 0.6971  test loss : 1.6867  train accuracy : 0.8627  train loss : 1.5315
+   5347.17s epoch[123] test accuracy : 0.6757  test loss : 1.6946  train accuracy : 0.8266  train loss : 1.5421
+   5390.44s epoch[124] test accuracy : 0.6653  test loss : 1.7001  train accuracy : 0.8083  train loss : 1.5494
+   5433.73s epoch[125] test accuracy : 0.6757  test loss : 1.7094  train accuracy : 0.8245  train loss : 1.5610
+   5477.46s epoch[126] test accuracy : 0.6859  test loss : 1.6876  train accuracy : 0.8354  train loss : 1.5407
+   5520.90s epoch[127] test accuracy : 0.7052  test loss : 1.6835  train accuracy : 0.8510  train loss : 1.5412
+   5564.16s epoch[128] test accuracy : 0.7082  test loss : 1.6908  train accuracy : 0.8682  train loss : 1.5358
+   5607.41s epoch[129] test accuracy : 0.6843  test loss : 1.6980  train accuracy : 0.8258  train loss : 1.5560
+   5650.65s epoch[130] test accuracy : 0.6888  test loss : 1.6894  train accuracy : 0.8413  train loss : 1.5392
+   5693.80s epoch[131] test accuracy : 0.6932  test loss : 1.6905  train accuracy : 0.8467  train loss : 1.5406
+   5736.93s epoch[132] test accuracy : 0.6948  test loss : 1.6899  train accuracy : 0.8500  train loss : 1.5382
+   5780.43s epoch[133] test accuracy : 0.6871  test loss : 1.6988  train accuracy : 0.8397  train loss : 1.5489
+   5823.56s epoch[134] test accuracy : 0.6866  test loss : 1.6954  train accuracy : 0.8457  train loss : 1.5405
+   5866.60s epoch[135] test accuracy : 0.6966  test loss : 1.6895  train accuracy : 0.8631  train loss : 1.5341
+   5909.93s epoch[136] test accuracy : 0.6767  test loss : 1.6898  train accuracy : 0.8296  train loss : 1.5351
+   5953.91s epoch[137] test accuracy : 0.6914  test loss : 1.6946  train accuracy : 0.8499  train loss : 1.5414
+   5998.15s epoch[138] test accuracy : 0.6906  test loss : 1.6869  train accuracy : 0.8494  train loss : 1.5353
+   6042.33s epoch[139] test accuracy : 0.6901  test loss : 1.6916  train accuracy : 0.8492  train loss : 1.5347
+   6087.36s epoch[140] test accuracy : 0.6864  test loss : 1.6882  train accuracy : 0.8413  train loss : 1.5363
+   6132.96s epoch[141] test accuracy : 0.6905  test loss : 1.6820  train accuracy : 0.8533  train loss : 1.5274
+   6178.99s epoch[142] test accuracy : 0.6970  test loss : 1.6934  train accuracy : 0.8533  train loss : 1.5419
+   6226.28s epoch[143] test accuracy : 0.6971  test loss : 1.6883  train accuracy : 0.8605  train loss : 1.5301
+   6272.13s epoch[144] test accuracy : 0.6829  test loss : 1.6952  train accuracy : 0.8348  train loss : 1.5469
+   6317.57s epoch[145] test accuracy : 0.6786  test loss : 1.7021  train accuracy : 0.8287  train loss : 1.5497
+   6363.57s epoch[146] test accuracy : 0.7012  test loss : 1.6829  train accuracy : 0.8661  train loss : 1.5260
+   6409.48s epoch[147] test accuracy : 0.6868  test loss : 1.6942  train accuracy : 0.8507  train loss : 1.5395
+   6455.08s epoch[148] test accuracy : 0.6878  test loss : 1.6874  train accuracy : 0.8430  train loss : 1.5314
+   6500.67s epoch[149] test accuracy : 0.6918  test loss : 1.6841  train accuracy : 0.8546  train loss : 1.5294
+   6546.84s epoch[150] test accuracy : 0.6707  test loss : 1.7056  train accuracy : 0.8243  train loss : 1.5564
+   6592.41s epoch[151] test accuracy : 0.6957  test loss : 1.6892  train accuracy : 0.8614  train loss : 1.5285
+   6637.72s epoch[152] test accuracy : 0.6936  test loss : 1.6894  train accuracy : 0.8618  train loss : 1.5317
+   6683.21s epoch[153] test accuracy : 0.6917  test loss : 1.6800  train accuracy : 0.8531  train loss : 1.5244
+   6729.30s epoch[154] test accuracy : 0.6651  test loss : 1.7018  train accuracy : 0.8164  train loss : 1.5424
+   6775.26s epoch[155] test accuracy : 0.6728  test loss : 1.7032  train accuracy : 0.8364  train loss : 1.5425
+   6821.20s epoch[156] test accuracy : 0.6753  test loss : 1.6918  train accuracy : 0.8324  train loss : 1.5302
+   6867.40s epoch[157] test accuracy : 0.7028  test loss : 1.6831  train accuracy : 0.8741  train loss : 1.5232
+   6913.62s epoch[158] test accuracy : 0.6862  test loss : 1.6915  train accuracy : 0.8395  train loss : 1.5397
+   6959.76s epoch[159] test accuracy : 0.6929  test loss : 1.6819  train accuracy : 0.8485  train loss : 1.5284
+   7006.12s epoch[160] test accuracy : 0.6856  test loss : 1.6910  train accuracy : 0.8541  train loss : 1.5285
+   7052.07s epoch[161] test accuracy : 0.6985  test loss : 1.6807  train accuracy : 0.8627  train loss : 1.5238
+   7099.71s epoch[162] test accuracy : 0.6756  test loss : 1.6906  train accuracy : 0.8261  train loss : 1.5356
+   7147.86s epoch[163] test accuracy : 0.6930  test loss : 1.6854  train accuracy : 0.8487  train loss : 1.5309
+   7195.76s epoch[164] test accuracy : 0.6882  test loss : 1.6890  train accuracy : 0.8427  train loss : 1.5288
+   7242.13s epoch[165] test accuracy : 0.6839  test loss : 1.6849  train accuracy : 0.8545  train loss : 1.5250
+   7287.79s epoch[166] test accuracy : 0.6812  test loss : 1.6900  train accuracy : 0.8386  train loss : 1.5331
+   7334.18s epoch[167] test accuracy : 0.6999  test loss : 1.6831  train accuracy : 0.8738  train loss : 1.5226
+   7379.70s epoch[168] test accuracy : 0.6994  test loss : 1.6834  train accuracy : 0.8651  train loss : 1.5262
+   7425.40s epoch[169] test accuracy : 0.6971  test loss : 1.6929  train accuracy : 0.8708  train loss : 1.5299
+   7471.28s epoch[170] test accuracy : 0.6842  test loss : 1.6902  train accuracy : 0.8463  train loss : 1.5282
+   7516.99s epoch[171] test accuracy : 0.6989  test loss : 1.6884  train accuracy : 0.8674  train loss : 1.5276
+   7562.69s epoch[172] test accuracy : 0.6823  test loss : 1.7098  train accuracy : 0.8469  train loss : 1.5551
+   7608.54s epoch[173] test accuracy : 0.6785  test loss : 1.6886  train accuracy : 0.8405  train loss : 1.5313
+   7654.25s epoch[174] test accuracy : 0.6933  test loss : 1.6891  train accuracy : 0.8658  train loss : 1.5257
+   7699.99s epoch[175] test accuracy : 0.6953  test loss : 1.6889  train accuracy : 0.8640  train loss : 1.5274
+   7745.46s epoch[176] test accuracy : 0.6989  test loss : 1.6844  train accuracy : 0.8717  train loss : 1.5205
+   7791.24s epoch[177] test accuracy : 0.6804  test loss : 1.6960  train accuracy : 0.8438  train loss : 1.5419
+   7837.36s epoch[178] test accuracy : 0.7014  test loss : 1.6842  train accuracy : 0.8747  train loss : 1.5229
+   7883.06s epoch[179] test accuracy : 0.7011  test loss : 1.6888  train accuracy : 0.8755  train loss : 1.5272
+   7928.82s epoch[180] test accuracy : 0.6945  test loss : 1.6896  train accuracy : 0.8638  train loss : 1.5270
+   7974.39s epoch[181] test accuracy : 0.6976  test loss : 1.6885  train accuracy : 0.8608  train loss : 1.5318
+   8020.42s epoch[182] test accuracy : 0.6848  test loss : 1.6855  train accuracy : 0.8548  train loss : 1.5206
+   8066.49s epoch[183] test accuracy : 0.6913  test loss : 1.6935  train accuracy : 0.8675  train loss : 1.5241
+   8112.28s epoch[184] test accuracy : 0.6946  test loss : 1.6851  train accuracy : 0.8712  train loss : 1.5231
+   8157.92s epoch[185] test accuracy : 0.7070  test loss : 1.6815  train accuracy : 0.8809  train loss : 1.5184
+   8203.71s epoch[186] test accuracy : 0.6951  test loss : 1.6861  train accuracy : 0.8713  train loss : 1.5168
+   8249.37s epoch[187] test accuracy : 0.6952  test loss : 1.6825  train accuracy : 0.8624  train loss : 1.5222
+   8295.15s epoch[188] test accuracy : 0.7018  test loss : 1.6893  train accuracy : 0.8768  train loss : 1.5204
+   8340.82s epoch[189] test accuracy : 0.6986  test loss : 1.6956  train accuracy : 0.8697  train loss : 1.5364
+   8386.66s epoch[190] test accuracy : 0.7061  test loss : 1.6912  train accuracy : 0.8827  train loss : 1.5282
+   8432.39s epoch[191] test accuracy : 0.6903  test loss : 1.6917  train accuracy : 0.8716  train loss : 1.5178
+   8478.04s epoch[192] test accuracy : 0.7000  test loss : 1.6852  train accuracy : 0.8802  train loss : 1.5164
+   8523.71s epoch[193] test accuracy : 0.6936  test loss : 1.6894  train accuracy : 0.8707  train loss : 1.5224
+   8571.01s epoch[194] test accuracy : 0.7074  test loss : 1.6829  train accuracy : 0.8865  train loss : 1.5214
+   8619.70s epoch[195] test accuracy : 0.7137  test loss : 1.6812  train accuracy : 0.8929  train loss : 1.5157
+   8668.11s epoch[196] test accuracy : 0.7054  test loss : 1.6832  train accuracy : 0.8796  train loss : 1.5154
+   8716.53s epoch[197] test accuracy : 0.6978  test loss : 1.6889  train accuracy : 0.8671  train loss : 1.5279
+   8764.93s epoch[198] test accuracy : 0.6978  test loss : 1.6816  train accuracy : 0.8696  train loss : 1.5211
+   8813.63s epoch[199] test accuracy : 0.7065  test loss : 1.6883  train accuracy : 0.8792  train loss : 1.5238
+   8861.66s epoch[200] test accuracy : 0.7067  test loss : 1.6806  train accuracy : 0.8852  train loss : 1.5141
+   8908.46s epoch[201] test accuracy : 0.6949  test loss : 1.6849  train accuracy : 0.8691  train loss : 1.5180
+   8954.23s epoch[202] test accuracy : 0.6921  test loss : 1.6868  train accuracy : 0.8701  train loss : 1.5171
+   9000.26s epoch[203] test accuracy : 0.7023  test loss : 1.6817  train accuracy : 0.8744  train loss : 1.5178
+   9046.22s epoch[204] test accuracy : 0.7010  test loss : 1.6841  train accuracy : 0.8743  train loss : 1.5213
+   9092.18s epoch[205] test accuracy : 0.7123  test loss : 1.6878  train accuracy : 0.8826  train loss : 1.5256
+   9138.08s epoch[206] test accuracy : 0.7049  test loss : 1.6842  train accuracy : 0.8845  train loss : 1.5162
+   9184.08s epoch[207] test accuracy : 0.7124  test loss : 1.6865  train accuracy : 0.8942  train loss : 1.5170
+   9229.83s epoch[208] test accuracy : 0.7084  test loss : 1.6851  train accuracy : 0.8820  train loss : 1.5199
+   9275.61s epoch[209] test accuracy : 0.6953  test loss : 1.6899  train accuracy : 0.8699  train loss : 1.5220
+   9321.41s epoch[210] test accuracy : 0.7088  test loss : 1.6810  train accuracy : 0.8822  train loss : 1.5155
+   9367.30s epoch[211] test accuracy : 0.6916  test loss : 1.6840  train accuracy : 0.8639  train loss : 1.5195
+   9413.38s epoch[212] test accuracy : 0.7112  test loss : 1.6805  train accuracy : 0.8741  train loss : 1.5195
+   9459.39s epoch[213] test accuracy : 0.7125  test loss : 1.6890  train accuracy : 0.8878  train loss : 1.5229
+   9505.42s epoch[214] test accuracy : 0.7204  test loss : 1.6826  train accuracy : 0.8966  train loss : 1.5173
+   9551.39s epoch[215] test accuracy : 0.6928  test loss : 1.6870  train accuracy : 0.8612  train loss : 1.5219
+   9597.57s epoch[216] test accuracy : 0.7023  test loss : 1.6880  train accuracy : 0.8851  train loss : 1.5178
+   9643.49s epoch[217] test accuracy : 0.7097  test loss : 1.6844  train accuracy : 0.8875  train loss : 1.5209
+   9689.41s epoch[218] test accuracy : 0.6982  test loss : 1.6874  train accuracy : 0.8770  train loss : 1.5217
+   9735.85s epoch[219] test accuracy : 0.7134  test loss : 1.6771  train accuracy : 0.8886  train loss : 1.5150
+   9782.10s epoch[220] test accuracy : 0.7024  test loss : 1.6891  train accuracy : 0.8818  train loss : 1.5204
+   9828.37s epoch[221] test accuracy : 0.7108  test loss : 1.6818  train accuracy : 0.8860  train loss : 1.5160
+   9874.56s epoch[222] test accuracy : 0.7014  test loss : 1.6946  train accuracy : 0.8844  train loss : 1.5205
+   9920.75s epoch[223] test accuracy : 0.6975  test loss : 1.6901  train accuracy : 0.8723  train loss : 1.5219
+   9966.89s epoch[224] test accuracy : 0.6906  test loss : 1.6952  train accuracy : 0.8671  train loss : 1.5219
+  10013.00s epoch[225] test accuracy : 0.7109  test loss : 1.6828  train accuracy : 0.8923  train loss : 1.5154
+  10059.22s epoch[226] test accuracy : 0.6951  test loss : 1.6886  train accuracy : 0.8840  train loss : 1.5149
+  10105.21s epoch[227] test accuracy : 0.6971  test loss : 1.6840  train accuracy : 0.8789  train loss : 1.5184
+  10151.09s epoch[228] test accuracy : 0.7057  test loss : 1.6903  train accuracy : 0.8909  train loss : 1.5211
+  10197.05s epoch[229] test accuracy : 0.7038  test loss : 1.6843  train accuracy : 0.8766  train loss : 1.5183
+  10243.13s epoch[230] test accuracy : 0.6969  test loss : 1.6892  train accuracy : 0.8823  train loss : 1.5152
+  10289.08s epoch[231] test accuracy : 0.6981  test loss : 1.6890  train accuracy : 0.8838  train loss : 1.5156
+  10335.03s epoch[232] test accuracy : 0.7117  test loss : 1.6843  train accuracy : 0.8958  train loss : 1.5158
+  10381.17s epoch[233] test accuracy : 0.6969  test loss : 1.6885  train accuracy : 0.8723  train loss : 1.5213
+  10427.35s epoch[234] test accuracy : 0.7023  test loss : 1.6828  train accuracy : 0.8883  train loss : 1.5099
+  10473.42s epoch[235] test accuracy : 0.7042  test loss : 1.6816  train accuracy : 0.8834  train loss : 1.5144
+  10519.41s epoch[236] test accuracy : 0.7019  test loss : 1.6878  train accuracy : 0.8867  train loss : 1.5146
+  10565.75s epoch[237] test accuracy : 0.6971  test loss : 1.6877  train accuracy : 0.8769  train loss : 1.5140
+  10611.85s epoch[238] test accuracy : 0.7092  test loss : 1.6896  train accuracy : 0.8922  train loss : 1.5196
+  10657.91s epoch[239] test accuracy : 0.6955  test loss : 1.6946  train accuracy : 0.8833  train loss : 1.5206
+  10704.04s epoch[240] test accuracy : 0.6999  test loss : 1.6833  train accuracy : 0.8854  train loss : 1.5120
+  10750.06s epoch[241] test accuracy : 0.7134  test loss : 1.6853  train accuracy : 0.8999  train loss : 1.5126
+  10796.00s epoch[242] test accuracy : 0.7124  test loss : 1.6781  train accuracy : 0.9052  train loss : 1.5091
+  10842.16s epoch[243] test accuracy : 0.7004  test loss : 1.6836  train accuracy : 0.8817  train loss : 1.5115
+  10888.43s epoch[244] test accuracy : 0.6961  test loss : 1.6875  train accuracy : 0.8768  train loss : 1.5229
+  10934.49s epoch[245] test accuracy : 0.7005  test loss : 1.6851  train accuracy : 0.8891  train loss : 1.5144
+  10980.62s epoch[246] test accuracy : 0.7068  test loss : 1.6876  train accuracy : 0.8998  train loss : 1.5147
+  11026.61s epoch[247] test accuracy : 0.7044  test loss : 1.6849  train accuracy : 0.8895  train loss : 1.5126
+  11072.49s epoch[248] test accuracy : 0.6978  test loss : 1.6938  train accuracy : 0.8823  train loss : 1.5235
+  11118.64s epoch[249] test accuracy : 0.7147  test loss : 1.6835  train accuracy : 0.9044  train loss : 1.5111
+  11164.62s epoch[250] test accuracy : 0.7031  test loss : 1.6911  train accuracy : 0.8926  train loss : 1.5138
+  11210.79s epoch[251] test accuracy : 0.7025  test loss : 1.6952  train accuracy : 0.8769  train loss : 1.5212
+  11256.85s epoch[252] test accuracy : 0.7020  test loss : 1.6868  train accuracy : 0.8913  train loss : 1.5136
+  11303.00s epoch[253] test accuracy : 0.6983  test loss : 1.6899  train accuracy : 0.8851  train loss : 1.5108
+  11349.02s epoch[254] test accuracy : 0.7013  test loss : 1.6868  train accuracy : 0.8946  train loss : 1.5136
+  11395.13s epoch[255] test accuracy : 0.7114  test loss : 1.6774  train accuracy : 0.8930  train loss : 1.5095
+  11441.20s epoch[256] test accuracy : 0.7078  test loss : 1.6848  train accuracy : 0.8966  train loss : 1.5069
+fitting end
+
