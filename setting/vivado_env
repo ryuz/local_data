@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+if [ -z "$VIVADO_ENV" ]; then
+    VIVADO_ENV=2019.2
+fi
+source /tools/Xilinx/Vitis/$VIVADO_ENV/settings64.sh
+`basename $0` $@
