@@ -1,6 +1,13 @@
+# vivado
 export VIVADO_ENV=2019.2
+function vivado_switch() {
+    export VIVADO_ENV=$1
+}
 
 # プロンプト変更
+function parse_vivado_version {
+    echo "$VIVADO_ENV"
+}
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \(\1\)/'
 }
@@ -17,6 +24,7 @@ function promps {
         *)      TITLEBAR="";;
     esac
     local BASE="\u@\h"
-    PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${BLUE}\w${GREEN}\$(parse_git_branch)${YELLOW} (vivado${VIVADO_ENV})${BLUE}${WHITE}\n\$ "
+    PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${BLUE}\w${GREEN}\$(parse_git_branch)${YELLOW} (vivado\${VIVADO_ENV})${BLUE}${WHITE}\n\$ "
 }
 promps
+
