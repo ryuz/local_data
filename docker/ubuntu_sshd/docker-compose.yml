@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  ubuntu_sshd:
+    build: .
+    image: ubuntu_sshd
+    container_name: my_sshd
+    ports:
+      - 20022:20022
+    volumes:
+      - /home/${USER}:/home/${USER}
+    environment:
+      LOCAL_USER: ${USER}
+      LOCAL_UID: ${LOCAL_UID}
+      LOCAL_GID: ${LOCAL_GID}
