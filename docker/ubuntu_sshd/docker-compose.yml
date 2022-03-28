@@ -8,8 +8,8 @@ services:
     ports:
       - 20022:20022
     volumes:
-      - /home/${USER}:/home/${USER}
+      - /home/${LOCAL_USER}:/home/${LOCAL_USER}
     environment:
-      LOCAL_USER: ${USER}
+      LOCAL_USER: ${LOCAL_USER}
       LOCAL_UID: ${LOCAL_UID}
       LOCAL_GID: ${LOCAL_GID}
